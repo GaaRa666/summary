@@ -8,7 +8,7 @@ const SkillList = () => {
   return (
     <div className="skillList">
       {skills.map((skill) => (
-        <Skill skill={skill} />
+        <Skill skill={skill} key={skill} />
       ))}
       <button className="skillList__add">
         <img className="skillList__add-img" src={PlusIcon} alt="" />

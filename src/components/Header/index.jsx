@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Language from "../../assets/Language.png";
 import Vector from "../../assets/Vector.svg";
 import SkillList from "../SkillList";
