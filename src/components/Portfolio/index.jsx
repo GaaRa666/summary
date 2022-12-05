@@ -3,7 +3,7 @@ import "./style.css";
 const Portfolio = () => {
   return (
     <div className="portfolio">
-      <h2 className="title">Portfolio</h2>
+      <h2>Portfolio</h2>
       <div className="portfolio__skill">
         <span>-</span>
         <p>Bootstrap 4 Material Design (Sample Link)</p>
