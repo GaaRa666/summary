@@ -11,8 +11,10 @@ const Body = () => {
       <Portfolio />
       <Experience />
       <SampleCode />
-      <Availability />
-      {/* <PreferredEnvironment /> */}
+      <div>
+        <Availability />
+        <PreferredEnvironment />
+      </div>
     </div>
   );
 };

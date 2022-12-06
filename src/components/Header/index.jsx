@@ -6,6 +6,10 @@ import Avatar from "./../../assets/Avatar.png";
 import "./styles.css";
 
 const Header = () => {
+  const printPdf = () => {
+    console.log("print");
+  };
+
   return (
     <>
       <div className="header__background" />
@@ -22,9 +26,9 @@ const Header = () => {
           </div>
           <SkillList />
         </div>
-        <div className="header__print">
-          <img className="header__print-icon" src={Vector} alt="" />
-          <span className="header__print-text">Print this page</span>
+        <div className="header__print" onClick={printPdf}>
+          <img className="header__print-icon link" src={Vector} alt="" />
+          <span className="link">Print this page</span>
         </div>
       </div>
     </>

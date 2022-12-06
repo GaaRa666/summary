@@ -1,5 +1,3 @@
-import Experience from "../Experience";
-import Portfolio from "../Portfolio";
 import "./style.css";
 
 const SampleCode = () => {

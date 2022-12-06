@@ -2,7 +2,7 @@ import "./style.css";
 
 const Quotes = ({ comments }) => {
   return (
-    <div>
+    <div className="comments">
       <span className="gigantic-quotes"> “</span>
       <p className="comments">{comments}</p>
       <span className="gigantic-quotes">„</span>
