@@ -15,3 +15,18 @@ h2 {
 
   margin-bottom: 24px;
 }
+
+.link {
+  cursor: pointer;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #3483cc;
+}
+.link:hover {
+  color: #eb5757;
+}
