@@ -32,6 +32,10 @@
   background: rgba(179, 186, 192, 0.2);
 }
 .header__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   flex-grow: 1;
 
   margin-right: 24px;
@@ -45,9 +49,13 @@
   color: #000000;
 }
 
-.header__info-name {
+.header__info-name-wrapper {
   margin-bottom: 8px;
+}
 
+.header__info-name {
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
@@ -82,6 +90,14 @@
   width: 24px;
 
   margin-right: 8px;
+}
+
+.header__print:hover svg path {
+  fill: #eb5757;
+}
+
+.header__print:hover .link {
+  color: #eb5757;
 }
 
 .header__print-text {

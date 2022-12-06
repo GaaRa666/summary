@@ -1,0 +1,17 @@
+.inputWrapper {
+  position: relative;
+}
+
+.inputIconWrapper {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(-50%, 0);
+
+  width: 5px;
+  height: 5px;
+  background: red;
+}
+
+.inputIcon {
+}
