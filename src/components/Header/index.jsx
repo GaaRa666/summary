@@ -46,7 +46,7 @@ const Header = () => {
             </ValueInput>
           </div>
 
-          <div className="headerInfoNameWrapper">
+          <div className="headerInfoLocationWrapper">
             <ValueInput
               value={data.location}
               className="headerInfoLocation"

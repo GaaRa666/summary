@@ -2,6 +2,13 @@
   position: relative;
 }
 
+input:valid {
+  background: rgba(0, 0, 0, 0.06);
+}
+input:invalid {
+  background: rgba(249, 1, 1, 0.06);
+}
+
 .inputIconWrapper {
   position: absolute;
   right: 5px;
@@ -14,4 +21,5 @@
 }
 
 .inputIcon {
+  display: flex;
 }
