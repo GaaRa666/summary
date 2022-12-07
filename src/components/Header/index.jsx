@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Language from "../../assets/Language.png";
 import { MainContext } from "../../pages/Main";
 import PrintIcon from "../Icons/PrintIcon";
@@ -7,14 +7,11 @@ import ValueInput from "../ValueInput";
 import jsPDF from "jspdf";
 import Avatar from "./../../assets/Avatar.png";
 import "./styles.css";
+import Refresh from "../Icons/Refresh";
 
 const Header = ({ reportTemplateRef }) => {
+  const [userAvatar, setUserAvatar] = useState(Avatar);
   const [data, setData] = useContext(MainContext);
-  const inputFile = useRef(null);
-
-  const onInputFile = () => {
-    inputFile.current.click();
-  };
 
   const handleSaveName = (newName) => {
     setData({
@@ -43,21 +40,25 @@ const Header = ({ reportTemplateRef }) => {
     });
   };
 
-  // const printPdf = () => {
-  //   doc.html(<div className="headerBackground" />, {
-  //     async callback(doc) {
-  //       await doc.save("pdf_name");
-  //     },
-  //   });
-  // };
+  const handleChooseAvatar = (e) => {
+    console.log("e.target.files[0]", e.target.files[0]);
+    setUserAvatar(URL.createObjectURL(e.target.files[0]));
+  };
 
   return (
     <>
       <div className="headerBackground" />
       <div className="header">
-        <div className="headerAvatar" onClick={onInputFile}>
-          <img src={Avatar}></img>
-          <input type="file" className="headerAvatarInput" ref={inputFile} />
+        <div className="headerAvatar">
+          <img className="headerAvatarImage" src={userAvatar}></img>
+          <label className="headerAvatarRefresh">
+            <Refresh />
+            <input
+              type="file"
+              className="headerAvatarInput"
+              onChange={handleChooseAvatar}
+            />
+          </label>
         </div>
         <div className="headerInfo">
           <div className="headerInfoNameWrapper">
