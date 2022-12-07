@@ -1,4 +1,18 @@
-.gigantic-quotes {
+.comments {
+  margin-right: 59px;
+}
+
+.commentsTitle {
+  margin-bottom: 40px;
+}
+
+.commentsText {
+  display: flex;
+
+  width: 232px;
+}
+
+.giganticLeftQuotes {
   width: 40px;
   height: 32px;
 
@@ -7,6 +21,11 @@
   color: rgba(179, 186, 192, 0.2);
 }
 
-.comments {
-  width: 232px;
+.giganticRightQuotes {
+  width: 40px;
+  height: 32px;
+
+  font-size: 120px;
+
+  color: rgba(179, 186, 192, 0.2);
 }

@@ -21,8 +21,8 @@ const SkillList = () => {
         <Skill skill={skill.name} key={skill.name} />
       ))}
       <ValueInput onSave={handleAddSkill}>
-        <button className="skillList__add">
-          <img className="skillList__add-img" src={PlusIcon} alt="" />
+        <button className="skillListAdd">
+          <img className="skillListAddImg" src={PlusIcon} alt="" />
         </button>
       </ValueInput>
     </div>

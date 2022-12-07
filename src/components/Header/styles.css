@@ -10,7 +10,7 @@
   padding-bottom: 16px;
 }
 
-.header__avatar {
+.headerAvatar {
   width: 168px;
   height: 168px;
 
@@ -20,7 +20,7 @@
   object-fit: cover;
 }
 
-.header__background {
+.headerBackground {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -31,7 +31,7 @@
 
   background: rgba(179, 186, 192, 0.2);
 }
-.header__info {
+.headerInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,11 +49,11 @@
   color: #000000;
 }
 
-.header__info-name-wrapper {
+.headerInfoNameWrapper {
   margin-bottom: 8px;
 }
 
-.header__info-name {
+.headerInfoName {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -61,11 +61,11 @@
   line-height: 48px;
 }
 
-.header__info-location {
+.headerInfoLocation {
   margin-bottom: 8px;
 }
 
-.header__info-language-wrapper {
+.headerInfoLanguageWrapper {
   display: flex;
 
   align-items: center;
@@ -73,34 +73,34 @@
   margin-bottom: 16px;
 }
 
-.header__info-language-flag {
+.headerInfoLanguageFlag {
   width: 24px;
   height: 24px;
 
   margin-right: 8px;
 }
 
-.header__print {
+.headerPrint {
   display: flex;
   align-items: center;
 }
 
-.header__print-icon {
+.headerPrintIcon {
   height: 24px;
   width: 24px;
 
   margin-right: 8px;
 }
 
-.header__print:hover svg path {
+.headerPrint:hover svg path {
   fill: #eb5757;
 }
 
-.header__print:hover .link {
+.headerPrint:hover .link {
   color: #eb5757;
 }
 
-.header__print-text {
+.headerPrint-text {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

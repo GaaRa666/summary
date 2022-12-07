@@ -29,7 +29,7 @@ const Experience = () => {
       <h2>Experience</h2>
       <ul>
         {data.skills.map(({ name, years }) => (
-          <li>
+          <li key={name}>
             {console.log(name)}
             <span>-{name} </span>
             <ValueInput

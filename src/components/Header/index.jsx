@@ -30,37 +30,39 @@ const Header = () => {
 
   return (
     <>
-      <div className="header__background" />
+      <div className="headerBackground" />
       <div className="header">
-        <div className="header__avatar">
+        <div className="headerAvatar">
           <img src={Avatar} />
         </div>
-        <div className="header__info">
-          <div className="header__info-name-wrapper">
+        <div className="headerInfo">
+          <div className="headerInfoNameWrapper">
             <ValueInput
               value={data.name}
               onSave={handleSaveName}
-              className="header__info-name"
+              className="headerInfoName"
             >
-              <h1 className="header__info-name">{data.name}</h1>
+              <h1 className="headerInfoName">{data.name}</h1>
             </ValueInput>
           </div>
 
-          <ValueInput
-            value={data.location}
-            className="header__info-location"
-            onSave={handleSaveLocation}
-          >
-            <p className="header__info-location">{data.location}</p>
-          </ValueInput>
-          <div className="header__info-language-wrapper">
-            <img className="header__info-language-flag" src={Language} alt="" />
+          <div className="headerInfoNameWrapper">
+            <ValueInput
+              value={data.location}
+              className="headerInfoLocation"
+              onSave={handleSaveLocation}
+            >
+              <p className="headerInfoLocation">{data.location}</p>
+            </ValueInput>
+          </div>
+          <div className="headerInfoLanguageWrapper">
+            <img className="headerInfoLanguageFlag" src={Language} alt="" />
             <span>English</span>
           </div>
           <SkillList />
         </div>
-        <div className="header__print" onClick={printPdf}>
-          <div className="header__print-icon">
+        <div className="headerPrint" onClick={printPdf}>
+          <div className="headerPrintIcon">
             <PrintIcon />
           </div>
           <span className="link">Print this page</span>
