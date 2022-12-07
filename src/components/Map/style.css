@@ -1,0 +1,11 @@
+.map {
+  font-family: sans-serif;
+  text-align: center;
+  width: 552px;
+  height: 200px;
+}
+
+.map-map {
+  height: 100%;
+  width: 100%;
+}
