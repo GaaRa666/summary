@@ -9,6 +9,7 @@ const ValueInput = ({
   onSave,
   className = "",
   onlyNumbers,
+  fromButton,
 }) => {
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState(value);
@@ -19,7 +20,6 @@ const ValueInput = ({
   };
 
   const handleInvalid = () => {
-    // e.target.setCustomValidity("ERRROR");
     console.log("Error Description");
   };
 
@@ -28,14 +28,14 @@ const ValueInput = ({
       ? setInputValid(false)
       : setInputValid(true);
     onlyNumbers
-      ? setInputValue(e.target.value.replace(/[^0-9\.]/g, ""))
+      ? setInputValue(e.target.value.replace(/[^0-9\,]/g, ""))
       : setInputValue(e.target.value);
   };
 
   const handleBlur = () => {
     setShowInput(false);
-    onSave(inputValue);
-    setInputValue("");
+    inputValue && onSave(inputValue);
+    fromButton && setInputValue("");
   };
 
   useEffect(() => {
