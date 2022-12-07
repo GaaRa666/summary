@@ -49,7 +49,7 @@ const ValueInput = ({
       {showInput && (
         <div className="inputWrapper">
           <input
-            className= {`${className} valueInput`}
+            className={`${className} valueInput ${!inputValid && 'valueInputInvalid'} `}
             value={inputValue}
             onChange={handleChange}
             onBlur={handleBlur}

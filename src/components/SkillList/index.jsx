@@ -7,18 +7,32 @@ import ValueInput from "../ValueInput";
 
 const SkillList = () => {
   const [data, setData] = useContext(MainContext);
+
   const handleAddSkill = (skillName) => {
     setData({
       ...data,
       skills: [...data.skills, { name: skillName }],
     });
-    console.log("Добавлен");
+  };
+  const handleDeleteSkill = (skillName) => {
+    setData({
+      ...data,
+      skills: [
+        ...data.skills.filter((skill) => {
+          return skill.name !== skillName;
+        }),
+      ],
+    });
   };
 
   return (
     <div className="skillList">
       {data.skills.map((skill) => (
-        <Skill skill={skill.name} key={skill.name} />
+        <Skill
+          onDelete={handleDeleteSkill}
+          skillName={skill.name}
+          key={skill.name}
+        />
       ))}
       <ValueInput
         className="skillListWrapper"

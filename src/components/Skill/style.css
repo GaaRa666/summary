@@ -1,4 +1,6 @@
 .skill {
+  position: relative;
+
   padding: 4px 8px;
 
   background: #333333;
@@ -12,4 +14,20 @@
 
   cursor: pointer;
   color: #ffffff;
+}
+
+.skill:hover .skillDeleteWrapper {
+  display: block;
+}
+
+.skillDeleteWrapper {
+  position: absolute;
+
+  top: -7px;
+  right: -7px;
+
+  display: none;
+
+  width: 16px;
+  height: 16px;
 }

@@ -13,7 +13,7 @@ const data = {
   location: "Portland, Oregon, USA",
   skills: [
     {
-      name: "php",
+      name: "PHP",
       years: 2,
     },
   ],

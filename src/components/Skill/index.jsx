@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import DeleteSkillIcon from "../Icons/DeleteSkillIcon";
 import "./style.css";
 
-const Skill = ({ skill }) => {
-  return <div className="skill">{skill}</div>;
+const Skill = ({ skillName, onDelete }) => {
+  const handleDeleteClick = () => {
+    onDelete(skillName);
+  };
+  return (
+    <div className="skill">
+      {skillName}
+      <div className="skillDeleteWrapper" onClick={handleDeleteClick}>
+        <DeleteSkillIcon />
+      </div>
+    </div>
+  );
 };
 
 export default Skill;

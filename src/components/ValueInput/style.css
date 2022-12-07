@@ -4,12 +4,18 @@
 
 .valueInput {
   width: 100%;
-}
 
-input:valid {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #000000;
+  border-left: none;
+
   background: rgba(0, 0, 0, 0.06);
 }
-input:invalid {
+
+.valueInputInvalid {
+  border-bottom: 1px solid #eb5757;
+
   background: rgba(249, 1, 1, 0.06);
 }
 
