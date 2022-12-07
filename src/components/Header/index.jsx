@@ -1,18 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import Language from "../../assets/Language.png";
-import Vector from "../../assets/Vector.svg";
 import { MainContext } from "../../pages/Main";
 import PrintIcon from "../Icons/PrintIcon";
 import SkillList from "../SkillList";
 import ValueInput from "../ValueInput";
+import jsPDF from "jspdf";
 import Avatar from "./../../assets/Avatar.png";
 import "./styles.css";
 
-const Header = () => {
-  const printPdf = () => {
-    console.log("print");
-  };
+const Header = ({ reportTemplateRef }) => {
   const [data, setData] = useContext(MainContext);
+  const inputFile = useRef(null);
+
+  const onInputFile = () => {
+    inputFile.current.click();
+  };
 
   const handleSaveName = (newName) => {
     setData({
@@ -28,12 +30,34 @@ const Header = () => {
     });
   };
 
+  const handleGeneratePdf = () => {
+    const doc = new jsPDF({
+      format: "a4",
+      unit: "px",
+    });
+
+    doc.html(reportTemplateRef.current, {
+      async callback(doc) {
+        await doc.save("document");
+      },
+    });
+  };
+
+  // const printPdf = () => {
+  //   doc.html(<div className="headerBackground" />, {
+  //     async callback(doc) {
+  //       await doc.save("pdf_name");
+  //     },
+  //   });
+  // };
+
   return (
     <>
       <div className="headerBackground" />
       <div className="header">
-        <div className="headerAvatar">
-          <img src={Avatar} />
+        <div className="headerAvatar" onClick={onInputFile}>
+          <img src={Avatar}></img>
+          <input type="file" className="headerAvatarInput" ref={inputFile} />
         </div>
         <div className="headerInfo">
           <div className="headerInfoNameWrapper">
@@ -61,7 +85,7 @@ const Header = () => {
           </div>
           <SkillList />
         </div>
-        <div className="headerPrint" onClick={printPdf}>
+        <div className="headerPrint" onClick={handleGeneratePdf}>
           <div className="headerPrintIcon">
             <PrintIcon />
           </div>

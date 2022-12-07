@@ -20,6 +20,10 @@
   object-fit: cover;
 }
 
+.headerAvatarInput {
+  display: none;
+}
+
 .headerBackground {
   position: absolute;
   z-index: -1;
@@ -50,6 +54,8 @@
 }
 
 .headerInfoNameWrapper {
+  width: 360px;
+
   margin-bottom: 8px;
 }
 
@@ -62,6 +68,8 @@
 }
 
 .headerInfoLocationWrapper {
+  width: 360px;
+
   margin-bottom: 8px;
 }
 

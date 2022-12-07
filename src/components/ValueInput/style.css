@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.valueInput {
+  width: 100%;
+}
+
 input:valid {
   background: rgba(0, 0, 0, 0.06);
 }
@@ -11,13 +15,28 @@ input:invalid {
 
 .inputIconWrapper {
   position: absolute;
-  right: 5px;
+  right: 4px;
   top: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(0, -50%);
 
-  width: 5px;
-  height: 5px;
-  background: red;
+  width: 16px;
+  height: 16px;
+}
+
+.inputErrorWrapper {
+  position: absolute;
+  right: -110px;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  color: #ff0000;
 }
 
 .inputIcon {

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useRef } from "react";
+
 import Body from "../../components/Body";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -21,17 +23,18 @@ export const MainContext = React.createContext();
 
 const Main = () => {
   const [mainData, setMainData] = useState(data);
-
-  console.log("mainData", mainData);
+  const reportTemplateRef = useRef(null);
 
   return (
-    <MainContext.Provider value={[mainData, setMainData]}>
-      <Layout>
-        <Header />
-        <Body />
-        <Footer />
-      </Layout>
-    </MainContext.Provider>
+    <div ref={reportTemplateRef}>
+      <MainContext.Provider value={[mainData, setMainData]}>
+        <Layout>
+          <Header reportTemplateRef={reportTemplateRef} />
+          <Body />
+          <Footer />
+        </Layout>
+      </MainContext.Provider>
+    </div>
   );
 };
 export default Main;

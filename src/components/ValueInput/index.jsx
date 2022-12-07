@@ -27,14 +27,15 @@ const ValueInput = ({
     e.target.value.match(/[^a-zA-Z0-9 ,]+/g)
       ? setInputValid(false)
       : setInputValid(true);
-    onlyNumbers
-      ? setInputValue(e.target.value.replace(/[^0-9\,]/g, ""))
-      : setInputValue(e.target.value);
+    if (onlyNumbers) {
+      setInputValue(e.target.value.replace(/[^0-9\,]/g, ""));
+      setInputValid(true);
+    } else setInputValue(e.target.value);
   };
 
   const handleBlur = () => {
     setShowInput(false);
-    inputValue && onSave(inputValue);
+    inputValid && inputValue && onSave(inputValue);
     fromButton && setInputValue("");
   };
 
@@ -46,9 +47,9 @@ const ValueInput = ({
     <>
       {!showInput && <div onClick={handleClick}>{children}</div>}
       {showInput && (
-        <span className="inputWrapper">
+        <div className="inputWrapper">
           <input
-            className={className}
+            className= {`${className} valueInput`}
             value={inputValue}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -58,7 +59,10 @@ const ValueInput = ({
           <div className="inputIconWrapper">
             {inputValid ? <ApproveIcon /> : <RejectIcon />}
           </div>
-        </span>
+          {!inputValid && (
+            <div className="inputErrorWrapper">Error Description</div>
+          )}
+        </div>
       )}
     </>
   );

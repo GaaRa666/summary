@@ -6,6 +6,10 @@
   gap: 8px;
 }
 
+.skillListWrapper {
+  width: 159px;
+}
+
 .skillListAdd {
   display: flex;
   align-items: center;

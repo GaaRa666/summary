@@ -30,9 +30,9 @@ const Experience = () => {
       <ul>
         {data.skills.map(({ name, years }) => (
           <li className="experienceSkillList" key={name}>
-            <span>-{name} </span>
+            <span className="experienceSkillListName">– {name} </span>
             <ValueInput
-            value={''}
+              value={""}
               onlyNumbers
               onSave={(years) => handleSaveYears(name, years)}
               className="experienceSkillListYears"

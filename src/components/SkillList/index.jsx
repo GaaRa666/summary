@@ -20,7 +20,12 @@ const SkillList = () => {
       {data.skills.map((skill) => (
         <Skill skill={skill.name} key={skill.name} />
       ))}
-      <ValueInput value={''} onSave={handleAddSkill} fromButton>
+      <ValueInput
+        className="skillListWrapper"
+        value={""}
+        onSave={handleAddSkill}
+        fromButton
+      >
         <button className="skillListAdd">
           <img className="skillListAddImg" src={PlusIcon} alt="" />
         </button>

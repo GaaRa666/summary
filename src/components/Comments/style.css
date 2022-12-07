@@ -1,5 +1,5 @@
 .comments {
-  margin-right: 59px;
+  margin-right: 39px;
 }
 
 .commentsTitle {
@@ -7,14 +7,22 @@
 }
 
 .commentsText {
-  display: flex;
+  position: relative;
 
   width: 232px;
+
+  margin-left: 16px;
+  text-align: center;
+}
+
+.commensQuotes {
+  line-height: 24px;
 }
 
 .giganticLeftQuotes {
-  width: 40px;
-  height: 32px;
+  position: absolute;
+  top: -36px;
+  left: -22px;
 
   font-size: 120px;
 
@@ -22,8 +30,10 @@
 }
 
 .giganticRightQuotes {
-  width: 40px;
-  height: 32px;
+  position: absolute;
+
+  bottom: -15px;
+  right: -22px;
 
   font-size: 120px;
 
