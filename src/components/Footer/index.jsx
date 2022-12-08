@@ -1,5 +1,5 @@
 import Comments from "../Comments";
-import Map from "../Map";
+import Maps from "../Maps";
 import "./style.css";
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
         title="In clients I look for..."
         comments="There is only one good, knowledge, and one evil, ignorance."
       />
-      <Map />
+      <Maps />
     </div>
   );
 };

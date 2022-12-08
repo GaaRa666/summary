@@ -1,24 +1,12 @@
 import "./style.css";
-import {
-  GoogleMap,
-  LoadScript,
-  OverlayView,
-  Marker,
-} from "@react-google-maps/api";
+import React from "react";
+import { GoogleMap, LoadScript, OverlayView, Marker } from "react-google-maps";
 
 const DOTS = 100; // Dots wont initial render until you change this
 
 const center = {
   lat: -3.745,
   lng: -38.523,
-};
-const position = {
-  lat: 37.772,
-  lng: -122.214,
-};
-
-const onLoad = (marker) => {
-  console.log("marker: ", marker);
 };
 
 const Map = () => {
@@ -45,7 +33,6 @@ const Map = () => {
               position={{ lat: 52 + Math.random(), lng: 13 + Math.random() }}
             >
               <img
-                key={i}
                 id={`yellow-dot-${i}`}
                 alt="yellow-dot"
                 src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
