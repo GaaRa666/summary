@@ -1,28 +1,32 @@
-import React, { Component, useContext, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { YMaps, Map, ZoomControl, Placemark } from "react-yandex-maps";
-import { MainContext } from "../../pages/Main";
 import "./style.css";
 
 const Maps = ({ location }) => {
-  const map = React.createRef();
-  const ymaps = React.createRef();
+  const map = useRef(null);
+  const ymaps = useRef(null);
 
   const [markerCoordinates, setCoordinates] = useState([]);
 
   const addSearchControlEvents = () => {
     const currentMap = map.current;
     const currentYmaps = ymaps.current;
-
-    const searchControl = new currentYmaps.control.SearchControl({});
-    searchControl.search(location).then(() => {
-      const geoObjectsArray = searchControl.getResultsArray();
-      if (geoObjectsArray.length) {
-        const coords = geoObjectsArray[0].geometry._coordinates;
-        currentMap.setCenter([...coords], 11);
-        setCoordinates(coords);
-      }
-    });
+    if (currentYmaps?.control) {
+      const searchControl = new currentYmaps.control.SearchControl({});
+      searchControl.search(location).then(() => {
+        const geoObjectsArray = searchControl.getResultsArray();
+        console.log("geoObjectsArray", geoObjectsArray);
+        if (geoObjectsArray.length) {
+          const coords = geoObjectsArray[0].geometry._coordinates;
+          currentMap.setCenter([...coords], 11);
+          setCoordinates(coords);
+        }
+      });
+    }
   };
+  useEffect(() => {
+    addSearchControlEvents();
+  }, [location]);
 
   return (
     <YMaps query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}>
