@@ -1,6 +1,7 @@
 import React, { Component, useContext, useEffect, useState } from "react";
 import { YMaps, Map, ZoomControl, Placemark } from "react-yandex-maps";
 import { MainContext } from "../../pages/Main";
+import "./style.css";
 
 const Maps = ({ location }) => {
   const map = React.createRef();

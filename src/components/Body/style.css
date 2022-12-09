@@ -9,3 +9,17 @@
   margin-top: 56px;
   margin-bottom: 72px;
 }
+
+@media screen and (max-width: 1150px) {
+  .body {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 10px auto;
+  }
+  h2 {
+    margin: 20px 0 10px;
+  }
+}
