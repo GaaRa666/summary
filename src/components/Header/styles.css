@@ -19,6 +19,9 @@
   margin-right: 24px;
 }
 
+.headerAvatar:hover {
+  cursor: pointer;
+}
 .headerAvatar:hover .headerAvatarRefresh {
   display: block;
 }
@@ -36,6 +39,8 @@
 
   width: 32px;
   height: 32px;
+
+  cursor: pointer;
 }
 
 .headerAvatarImage {
@@ -114,6 +119,8 @@
 .headerPrint {
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .headerPrintIcon {

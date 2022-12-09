@@ -16,8 +16,8 @@
   color: #ffffff;
 }
 
-.skill:hover .skillDeleteWrapper {
-  display: block;
+.skill:hover {
+  background: #666666;
 }
 
 .skillDeleteWrapper {
