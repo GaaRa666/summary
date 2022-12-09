@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierForestLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const SampleCode = () => {
   const sampleCodeExample = ` <div class="golden-grid">
@@ -16,7 +16,7 @@ const SampleCode = () => {
       <SyntaxHighlighter
         children={sampleCodeExample}
         language="htmlbars"
-        style={atelierForestLight}
+        style={tomorrow}
         showLineNumbers
         lineNumberContainerStyle
       />
