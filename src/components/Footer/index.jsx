@@ -1,8 +1,12 @@
+import { useContext, useState } from "react";
+import { MainContext } from "../../pages/Main";
 import Comments from "../Comments";
 import Maps from "../Maps";
 import "./style.css";
 
 const Footer = () => {
+  const [data, setData] = useContext(MainContext);
+  const [location, setLocation] = useState(data.location);
   return (
     <div className="footer">
       <Comments
@@ -13,7 +17,7 @@ const Footer = () => {
         title="In clients I look for..."
         comments="There is only one good, knowledge, and one evil, ignorance."
       />
-      <Maps />
+      <Maps location={data.location} />
     </div>
   );
 };
