@@ -21,11 +21,8 @@ const Maps = ({ location }) => {
         setCoordinates(coords);
       }
     });
-
-    // currentMap.controls.add(searchControl);
   };
 
-  console.log("loc", location);
   return (
     <YMaps query={{ apikey: "8b56a857-f05f-4dc6-a91b-bc58f302ff21" }}>
       <Map
@@ -36,7 +33,7 @@ const Maps = ({ location }) => {
           addSearchControlEvents();
         }}
         width="100%"
-        height="400px"
+        height="200px"
         modules={["control.SearchControl"]}
       >
         <ZoomControl
